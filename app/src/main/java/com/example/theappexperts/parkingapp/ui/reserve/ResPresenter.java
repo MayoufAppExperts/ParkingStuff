@@ -1,3 +1,4 @@
+/*
 package com.example.theappexperts.parkingapp.ui.reserve;
 
 import com.example.theappexperts.parkingapp.DataManager;
@@ -13,9 +14,11 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 
+*/
 /**
  * Created by TheAppExperts on 09/10/2017.
- */
+ *//*
+
 
 public class ResPresenter
     <V extends IResMvpView>
@@ -49,3 +52,4 @@ public class ResPresenter
 
     }
 }
+*/

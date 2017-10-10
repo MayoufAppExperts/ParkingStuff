@@ -3,37 +3,27 @@ package com.example.theappexperts.parkingapp;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-//import com.example.theappexperts.parkingapp.SDI.component.DaggerIActivityComponent;
-//import com.example.theappexperts.parkingapp.SDI.component.DaggerIActivityComponent;
 import com.example.theappexperts.parkingapp.SDI.component.DaggerIActivityComponent;
 import com.example.theappexperts.parkingapp.SDI.component.IActivityComponent;
 import com.example.theappexperts.parkingapp.SDI.module.ActivityModule;
 import com.example.theappexperts.parkingapp.network.model.ParkingList;
 import com.example.theappexperts.parkingapp.ui.parkingList.IParkingListMvpView;
 import com.example.theappexperts.parkingapp.ui.parkingList.ParkingListPresenter;
-import com.example.theappexperts.parkingapp.ui.reserve.IResMvpView;
-import com.example.theappexperts.parkingapp.ui.reserve.ResPresenter;
-import com.example.theappexperts.parkingapp.ui.utils.rx.AppSchedulerProvider;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
-import java.util.function.LongFunction;
 
 import javax.inject.Inject;
 
-import io.reactivex.disposables.CompositeDisposable;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, IParkingListMvpView, IResMvpView {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, IParkingListMvpView {
 
     IActivityComponent iActivityComponent;
     List<ParkingList> parkingList;
@@ -45,9 +35,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Inject
     ParkingListPresenter<IParkingListMvpView> iParkingListMvpViewParkingListPresenter;
-
-    @Inject
-    ResPresenter<IResMvpView> iResMvpViewResPresenter;
+//
+//    @Inject
+//    ResPresenter<IResMvpView> iResMvpViewResPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,16 +149,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean isNetworkConnected() {
         return false;
-    }
-
-    @Override
-    public void onReserveCompleted(List<ParkingList> parkingList) {
-        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                Log.i("blah", String.valueOf(parkingList.get(Integer.parseInt(marker.getId()))));
-            }
-        });
-
     }
 }

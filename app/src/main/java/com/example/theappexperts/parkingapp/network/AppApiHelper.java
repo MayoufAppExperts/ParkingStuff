@@ -30,7 +30,7 @@ public class AppApiHelper implements ApiHelper {
     }
 
     @Override
-    public Observable<List<ParkingList>> useCaseRes() {
+    public Observable<ParkingList> useCaseRes() {
         return reqInterface.getReserve();
     }
 }

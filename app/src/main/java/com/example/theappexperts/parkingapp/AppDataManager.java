@@ -4,9 +4,7 @@ import android.content.Context;
 
 import com.example.theappexperts.parkingapp.SDI.scope.ApplicationContext;
 import com.example.theappexperts.parkingapp.network.ApiHelper;
-import com.example.theappexperts.parkingapp.network.AppApiHelper;
 import com.example.theappexperts.parkingapp.network.model.ParkingList;
-import com.google.android.gms.common.api.Api;
 
 import java.util.List;
 
@@ -34,7 +32,7 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Observable<List<ParkingList>> useCaseRes() {
+    public Observable<ParkingList> useCaseRes() {
         return apiHelper.useCaseRes();
     }
 }

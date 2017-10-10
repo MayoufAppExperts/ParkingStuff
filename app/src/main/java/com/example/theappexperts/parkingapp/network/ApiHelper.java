@@ -12,5 +12,5 @@ import io.reactivex.Observable;
 
 public interface ApiHelper {
     Observable<List<ParkingList>> useCaseParkingList();
-    Observable<List<ParkingList>> useCaseRes();
+    Observable<ParkingList> useCaseRes();
 }
